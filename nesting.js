@@ -9,7 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var employees = [
+var employees = [ 
   {
     "firstName": "Von",
     "lastName": "Budibent",
@@ -52,6 +52,16 @@ var employees = [
 
 //Code Here
 
+function employeeUpdater() {
+  for(let key in employees) {
+    if(employees[key].firstName === "Theo") {
+      delete employees[key];
+    } else if(employees[key].firstName === "Lorie") {
+      employees[key].department = "HR";
+    }
+  };
+  return employees;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -70,6 +80,16 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 
+function removeDuplicates() {
+  let duplicateValue = [];
+  for(let i = 0; i < workplaceAccidents.length; i++) {
+    if(duplicateValue.indexOf(workplaceAccidents[i]) == -1) {
+      duplicateValue.push(workplaceAccidents[i]);
+    }
+    // console.log(workplaceAccidents[i]);
+  }
+  return duplicateValue;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +117,11 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+// console.log(grumpyActivity);
+
+// console.log(grumpyActivity);
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -141,6 +164,32 @@ var myCar = {
 //Code Here
 
 
+// function recordCleaner() {
+//   let newCar = myCar.accidents[0].atFaultForAccident = false;
+//   let newCar1 = myCar.accidents[1].atFaultForAccident = false;
+//   let newCar2 = myCar.accidents[2].atFaultForAccident = false;
+// }
+
+function recordCleaner(){
+  for (var key in myCar ){
+    let newCar= myCar[key].atFaultForAccident;
+    console.log(newCar);
+    for( let prop in newCar) {
+      if(newCar[prop] === true) {
+        newCar[prop] = false;
+      } 
+      console.log(newCar);
+      // console.log(newCar[prop]);
+    }
+    // if(myCar[key].accidents){
+    //   console.log(myCar[key].accidents[0].atFaultForAccident )
+    //   myCar[key].accidents.atFaultForAccident = false;
+    // }
+ 
+ 
+  }
+  //return myCar;
+ }
 
 ////////// PROBLEM 5 //////////
 

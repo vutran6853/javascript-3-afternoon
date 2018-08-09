@@ -31,7 +31,19 @@
 
 //Code Here
 
+class Employee {
+  constructor(first_name, last_name, email, age) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+  }
+  makeWidget() {
+    return this.first_name + " " + this.last_name + " Widget";
+  }
+}
 
+let user1 = new Employee("Dallin ", " Anderson", "email@gmail.com", 30);
 
 ////////// PROBLEM 2 //////////
 
@@ -51,6 +63,21 @@
 
 //Code Here
 
+class Manager extends Employee {
+  constructor(first_name, last_name, email, age) {
+    super(first_name, last_name, email, age)
+    this.reports = [];
+  }
+  hire(employee) {
+     this.reports.push(employee);
+  }
+  fire(index) {
+   this.reports.splice(index, 1);
+  }
+};
+
+let manager1 = new Manager("Vu", "Tran", "gmail@gmail.com", 30);
+// console.log(manager1);
 
 
 ////////// PROBLEM 3 //////////
@@ -77,7 +104,33 @@
 
 //Code Here
 
+class ProgressiveManager extends Manager {
+  constructor(first_name, last_name, email, age, title, bonus) {
+    super(first_name, last_name, email, age)
+    this.reports = [];
+    this.title = 'Not a manager';
+    this.bonus = 0;
+  }
+  titles() {
+    if(title === "Not a manager") {
+      return ProgressiveManager.title.push("0");
+    } else if(title === "Barely Manager") { 
+      return "1-3";
+    } else if(title === "Mostly Manager") { 
+      return "4-10";
+    } else if(title === "Manager") { 
+      return "11-50";
+    } else if(title === "Manager Plus") { 
+      return "51-100";
+    } else  { 
+      return "101+";
+    };
+  bonus() 
+  }
+}
 
+let ProgressiveManager1 = new ProgressiveManager("Vu", "Tran", "gmail@gmail.com", 30);
+console.log(ProgressiveManager1);
 
 ////////// PROBLEM 4 - Black Diamond //////////
 
@@ -105,3 +158,19 @@
 //Code Here
 
 
+class Machine {
+  constructor() {
+    this.widgets_made_count = 0;
+    this.wear_and_tear_count = 0;
+    this.needs_reboot = false;
+  }
+  makeWidgets() {
+
+  };
+  fixMachine() {
+
+  };
+  reboot() {
+
+  };
+}
