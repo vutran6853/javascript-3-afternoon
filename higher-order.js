@@ -101,7 +101,13 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter(function(CP) {
+    // console.log(CP.CP);
+    if(CP.CP >= 200) {
+      // console.log(CP.CP);
+       return CP.CP;
+    }
+});
 
 
 
@@ -118,7 +124,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get the sum of all the order totals after adding in the sales tax
 */
 
-let ordersTotal //Code Here
+let ordersTotal = orders.map(function(SUM) {
+  return SUM;
+})
 
 
 
@@ -138,6 +146,16 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
+let bobsTotal = purchases.map(function(findBob) {
+  for(let key in findBob) {
+    return findBob.price;
+  }
+  
+  //   console.log(findBob);
+ 
+})
+//  CREAT ADD METHODS 
+let add  = (a, b) => a + b;
 
-
+let sum = bobsfinder.reduce(add);
+  console.log(sum);

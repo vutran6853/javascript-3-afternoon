@@ -191,10 +191,16 @@ function recordCleaner(){
   //return myCar;
  }
 
+
+ 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [ 
+  [1, 2, 3, 4], 
+  [5, 6], 
+  [7, 8, 9, 10, 11]
+];
 // Do not edit the code above.
 
 /*
@@ -208,4 +214,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 //Code Here
 
+  // for(let i = 0; i < numsArr; i++) {
+  //   console.log(numsArr[i]);
+  // }
 
+  for(let key in numsArr) {
+    let eachArray = numsArr[key];
+    for(let i =0; i <eachArray.length; i++) {
+      if(eachArray[i] % 2 === 0) {
+        console.log("even")
+      } else {
+        console.log("Odd")
+      }
+    }
+  }
+
+
+ 
